@@ -38,3 +38,47 @@ Github integration to Jenkins
 Dashboard > Manage Jenkins > Manage Credentials > Jenkins > Global Credentials > Add Credentials
 
 Pipeline job
+- Click on New Item on the dashboard > Give a name for your project
+- Click on pipeline and save
+- Under the General tab
+    - Click on This project is parameterized
+    - Name = action
+    - Choices = 
+        plan
+        apply
+        destroy
+    - Description = Do you want to perform Plan, Apply or Destroy?
+
+- Scroll all the way down to the Pipeline script
+    here is a sample script
+
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bors40/AWS_terraform_project.git']]])
+            }
+        }
+        
+        stage('terraform init') {
+            steps {
+                sh ("terraform init");
+            }    
+        }
+        
+        stage('terraform Action') {
+            steps {
+                echo "terraform action from the parameter is --> ${action}"
+                sh ("terraform ${action}");
+            }    
+        }        
+        
+    }
+}
+
+- Apply and Save
+- Go to dashboard and click on the pipeline job
+- Click on Build with Parameters
+- THEN THE MOMENT OF TRUTH by Burhan
