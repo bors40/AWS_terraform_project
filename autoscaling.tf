@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "prdx-launchconf-image" {
   instance_type               = "t2.micro"
   security_groups             = ["${aws_security_group.prdx-proje-sg.id}"]
   associate_public_ip_address = true
-  key_name                    = "DevOps14"
+  key_name                    = "benji91"
   user_data                   = <<EOF
 #!/bin/bash
 yum install -y httpd php git
@@ -30,7 +30,7 @@ resource "aws_launch_configuration" "prdx-launchconf-video" {
   instance_type               = "t2.micro"
   security_groups             = ["${aws_security_group.prdx-proje-sg.id}"]
   associate_public_ip_address = true
-  key_name                    = "DevOps14"
+  key_name                    = "benji91"
   user_data                   = <<EOF
 #!/bin/bash
 yum install -y httpd php git

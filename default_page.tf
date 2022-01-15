@@ -15,7 +15,7 @@ data "aws_ami" "amazon" {
 resource "aws_instance" "default_page" {
   ami                         = data.aws_ami.amazon.id
   instance_type               = "t2.micro"
-  key_name                    = "DevOps14"
+  key_name                    = "benji91"
   subnet_id                   = aws_subnet.prdx-public1-subnet.id
   vpc_security_group_ids      = [aws_security_group.prdx-proje-sg.id]
   associate_public_ip_address = true
