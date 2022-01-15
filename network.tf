@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "prdx-ig" {
 resource "aws_subnet" "prdx-public1-subnet" {
   vpc_id            = aws_vpc.prdx-vpc.id
   cidr_block        = "10.0.0.0/24"
-  availability_zone = "us-east-2a"
+  availability_zone = "us-east-1a"
   tags = {
     Name = element(var.tags, 2)
   }
@@ -25,7 +25,7 @@ resource "aws_subnet" "prdx-public1-subnet" {
 resource "aws_subnet" "prdx-public-subnet" {
   vpc_id            = aws_vpc.prdx-vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-2b"
+  availability_zone = "us-east-1b"
   tags = {
     Name = element(var.tags, 3)
   }
