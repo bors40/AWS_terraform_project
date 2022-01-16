@@ -8,8 +8,8 @@ resource "aws_launch_configuration" "prdx-launchconf-image" {
 #!/bin/bash
 yum install -y httpd php git
 cd /var/www/html
-sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/itmeme/index-image.html 
-sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/itmeme/istockphoto-1124656717-612x612.jpeg
+sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/index-image.html 
+sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/istockphoto-1124656717-612x612.jpeg
 mv index-image.html index.html
 mv istockphoto-1124656717-612x612.jpeg itmeme.jpeg
 mkdir /var/www/html/itmeme
@@ -35,8 +35,8 @@ resource "aws_launch_configuration" "prdx-launchconf-video" {
 #!/bin/bash
 yum install -y httpd php git
 cd /var/www/html
-sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/video/index-animation.html
-sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/video/giphy.gif
+sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/index-animation.html
+sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/giphy.gif
 mv index-animation.html index.html
 mv giphy.gif  videos.gif
 mkdir /var/www/html/videos

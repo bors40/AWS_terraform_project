@@ -1,3 +1,4 @@
+/*
 resource "aws_s3_bucket" "b2" {
   bucket = "s3-terraform-bucket-lab1"
   acl    = "private"
@@ -58,3 +59,4 @@ resource "aws_s3_bucket_policy" "prod_website" {
 }
 POLICY
 }
+*/

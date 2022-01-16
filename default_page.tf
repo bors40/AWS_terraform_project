@@ -23,8 +23,8 @@ resource "aws_instance" "default_page" {
     #!/bin/bash
     sudo yum install -y httpd
     cd /var/www/html
-    sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/default/index-default.html
-    sudo wget https://s3-terraform-bucket-lab1.s3.us-east-2.amazonaws.com/default/2015-dodge-charger-srt-hellcat-front-left-angle-625x417-c.jpeg
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/default/index-default.html
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/default/2015-dodge-charger-srt-hellcat-front-left-angle-625x417-c.jpeg
     sudo mv index-default.html index.html
     sudo systemctl start httpd
     sudo systemctl enable httpd --now
