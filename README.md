@@ -29,13 +29,14 @@ Copy the Public IPv4 address of ec2 and paste on the browser:
 http://Public-IPv4-address:8080
 
 Jenkins Plugins needs to installed
-1- Terraform Plugin
-2- GitHub Authentication plugin
-3- GitHub Integration Plugin
-4- GitHub plugin
+- Terraform Plugin
+- GitHub Authentication plugin
+- GitHub Integration Plugin
+- GitHub plugin
 
 Github integration to Jenkins
 Dashboard > Manage Jenkins > Manage Credentials > Jenkins > Global Credentials > Add Credentials
+- Enter you username and password your github account
 
 Pipeline job
 - Click on New Item on the dashboard > Give a name for your project
@@ -52,6 +53,7 @@ Pipeline job
 
 - Scroll all the way down to the Pipeline script
     here is a sample script
+
 
 pipeline {
     agent any
