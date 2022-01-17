@@ -2,12 +2,12 @@
 AWS terraform project
 
 This repo creates these resources
-Provider = AWS
-Network = VPC, IG, Subnet, RT, RTA, EIP, SG
-S3 buckets
-LB = TG, TGA, LB, LB_listeners
-Default Page = ami Data Block, ec2
-Autoscaling = LC, ASP, ASG, CWM, ASA
+- Provider = AWS
+- Network = VPC, IG, Subnet, RT, RTA, EIP, SG
+- S3 buckets
+- LB = TG, TGA, LB, LB_listeners
+- Default Page = ami Data Block, ec2
+- Autoscaling = LC, ASP, ASG, CWM, ASA
 
 Steps to create Jenkins Master ec2
 - Spin up a ec2 instance
@@ -41,6 +41,7 @@ Pipeline job
 - Click on New Item on the dashboard > Give a name for your project
 - Click on pipeline and save
 - Under the General tab
+    - Select the GitHub hook trigger for GITscm polling
     - Click on This project is parameterized
     - Name = action
     - Choices = 
