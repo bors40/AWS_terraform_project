@@ -34,12 +34,4 @@ EOF
   }
 }
 
-resource "aws_instance" "my-first-ec2" {
-  ami           = "ami-08e4e35cccc6189f4"
-  instance_type = "t2.micro"
-  key_name      = "benji91"
-  tags = {
-    Name  = "myec2-1"
-    Owner = "Burhan"
-  }
-}
+
