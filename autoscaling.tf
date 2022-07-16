@@ -50,6 +50,7 @@ resource "aws_launch_configuration" "prdx-launchconf-video" {
     find /var/www -type f -exec sudo chmod 0664 {} \;
 EOF
 }
+
 resource "aws_autoscaling_policy" "prdx-policy-image" {
   name                   = "terraform-prdx-image"
   scaling_adjustment     = 1
