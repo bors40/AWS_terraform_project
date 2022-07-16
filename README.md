@@ -1,5 +1,6 @@
 # AWS_tf_project
 AWS terraform project
+
 This is a sample project to deploy services on AWS for a very simple application.
 
 This repo creates these resources
