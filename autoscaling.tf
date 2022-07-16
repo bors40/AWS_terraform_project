@@ -5,22 +5,22 @@ resource "aws_launch_configuration" "prdx-launchconf-image" {
   associate_public_ip_address = true
   key_name                    = "benji91"
   user_data                   = <<EOF
-#!/bin/bash
-yum install -y httpd php git
-cd /var/www/html
-sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/index-image.html 
-sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/istockphoto-1124656717-612x612.jpeg
-mv index-image.html index.html
-mv istockphoto-1124656717-612x612.jpeg itmeme.jpeg
-mkdir /var/www/html/itmeme
-cp index.html itmeme/
-cp /var/www/html/itmeme.jpeg /var/www/html/itmeme
-sudo systemctl start httpd
-sudo systemctl enable httpd
-sudo usermod -a -G apache ec2-user
-sudo chown -R ec2-user:apache /var/www
-sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
-find /var/www -type f -exec sudo chmod 0664 {} \;
+    #!/bin/bash
+    yum install -y httpd php git
+    cd /var/www/html
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/index-image.html 
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/itmeme/istockphoto-1124656717-612x612.jpeg
+    mv index-image.html index.html
+    mv istockphoto-1124656717-612x612.jpeg itmeme.jpeg
+    mkdir /var/www/html/itmeme
+    cp index.html itmeme/
+    cp /var/www/html/itmeme.jpeg /var/www/html/itmeme
+    sudo systemctl start httpd
+    sudo systemctl enable httpd
+    sudo usermod -a -G apache ec2-user
+    sudo chown -R ec2-user:apache /var/www
+    sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+    find /var/www -type f -exec sudo chmod 0664 {} \;
 EOF
 }
 
@@ -32,22 +32,22 @@ resource "aws_launch_configuration" "prdx-launchconf-video" {
   associate_public_ip_address = true
   key_name                    = "benji91"
   user_data                   = <<EOF
-#!/bin/bash
-yum install -y httpd php git
-cd /var/www/html
-sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/index-animation.html
-sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/giphy.gif
-mv index-animation.html index.html
-mv giphy.gif  videos.gif
-mkdir /var/www/html/videos
-cp index.html videos
-cp /var/www/html/videos.gif /var/www/html/videos
-sudo systemctl start httpd
-sudo systemctl enable httpd
-sudo usermod -a -G apache ec2-user
-sudo chown -R ec2-user:apache /var/www
-sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
-find /var/www -type f -exec sudo chmod 0664 {} \;
+    #!/bin/bash
+    yum install -y httpd php git
+    cd /var/www/html
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/index-animation.html
+    sudo wget https://s3-terraform-bucket-lab1.s3.amazonaws.com/video/giphy.gif
+    mv index-animation.html index.html
+    mv giphy.gif  videos.gif
+    mkdir /var/www/html/videos
+    cp index.html videos
+    cp /var/www/html/videos.gif /var/www/html/videos
+    sudo systemctl start httpd
+    sudo systemctl enable httpd
+    sudo usermod -a -G apache ec2-user
+    sudo chown -R ec2-user:apache /var/www
+    sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+    find /var/www -type f -exec sudo chmod 0664 {} \;
 EOF
 }
 resource "aws_autoscaling_policy" "prdx-policy-image" {
